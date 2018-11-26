@@ -31,7 +31,7 @@ if "BUNDLE_LIBMECAB" in os.environ:
     inc_dir  = ["build/libmecab/mecab/src"]
     lib_dirs = ["build/libmecab/mecab/src"]
 
-    for line in read_file("build/libmecab/mecab/mecab-config").splitlines():
+    for line in read_file("/app/.linuxbrew/bin/mecab-config").splitlines():
         if "sed s/-l//g" in line:
             libs = [word[2:] for word in line.split()
                     if word[:2] == "-l"]
