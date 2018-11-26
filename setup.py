@@ -50,7 +50,7 @@ else:
     clocale_env["LC_ALL"] = "C"
 
     def mecab_config(arg):
-        output = subprocess.check_output(["mecab-config", arg],
+        output = subprocess.check_output(["/app/.linuxbrew/bin/mecab-config", arg],
                                          env=clocale_env)
         if not isinstance(output, str):
             output = output.decode("utf-8")
